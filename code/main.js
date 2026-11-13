@@ -2,6 +2,7 @@ import { CAMPUSES } from "./config.js";
 import { loadCameras, countByCampus } from "./cameras.js";
 import { createMap, addCameras, focusCampus, focusAll } from "./map.js";
 import "./modal.js";
+import "./carousel.js";
 import { initTheme } from "./theme.js";
 import { showStatewide, showCampus, showCamera, showError } from "./panel.js";
 
