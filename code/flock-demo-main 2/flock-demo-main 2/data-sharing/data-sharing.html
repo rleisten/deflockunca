@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How plate reads add up</title>
+<meta name="description" content="Four short, interactive scenes with invented data showing how license plate reads become profiles of people.">
+<link rel="stylesheet" href="scenes.css">
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+</head>
+<body class="scenes">
+<a class="skip" href="#main">Skip to the scene</a>
+
+<header class="site-head">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <div>
+      <h1>How plate reads add up</h1>
+    </div>
+  </div>
+  <div class="head-actions">
+    <a class="btn ghost" href="../map/index.html"><span class="long">← Back to the map</span><span class="short" aria-label="Back to the map">← Map</span></a>
+    <button id="theme-toggle" class="btn icon" type="button"></button>
+  </div>
+</header>
+
+<nav id="stepper" class="stepper" aria-label="Scenes"></nav>
+
+<main id="main" class="page">
+
+  <div class="scene-layout">
+    <div class="scene-main">
+      <div id="scene" class="scene" tabindex="-1"></div>
+      <div id="facts"></div>
+      <div id="outro"></div>
+    </div>
+    <aside id="factsheet" class="factsheet" aria-label="Data Facts: everything known about this car so far"></aside>
+  </div>
+</main>
+
+<div class="navbar" role="group" aria-label="Move between scenes">
+  <button id="prev" class="btn ghost" type="button">← <span id="prev-label">Back</span></button>
+  <button id="next" class="btn primary" type="button"><span id="next-label"></span> →</button>
+</div>
+
+<button id="fs-pill" class="fs-pill" type="button" aria-expanded="false" aria-controls="factsheet">
+  <span class="fs-pill-label">Data Facts</span> <b id="fs-pill-n">0</b> <span class="fs-pill-pct" id="fs-pill-pct"></span>
+</button>
+<div id="fs-backdrop" class="fs-backdrop" hidden></div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+
+<noscript><p class="noscript">This page needs JavaScript to run the interactive scenes.</p></noscript>
+<script type="module" src="js/scenes/index.js"></script>
+</body>
+</html>
